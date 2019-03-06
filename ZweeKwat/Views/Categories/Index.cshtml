@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ZweeKwatMarket.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="typoh2" style="padding-left:20px; padding-top:20px;">Categories</h2>
+
+<div class="bs-docs-example" style="padding:40px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>@item.Name</td>
+
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    </td>
+
+                </tr>
+
+            </tbody>
+        }
+        <tr>
+            <td>
+                <a class="btn btn-default" href="/Categories/Create" role="button" style="background-color:#7fa33e">Add New</a>
+            </td>
+        </tr>
+
+    </table>
+
+</div>

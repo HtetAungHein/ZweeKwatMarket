@@ -1,0 +1,529 @@
+﻿@using ZweeKwat.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <!--/tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+               function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!--//tags -->
+    <link href="~/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/css/font-awesome.css" rel="stylesheet">
+    <link href="~/css/easy-responsive-tabs.css" rel='stylesheet' type='text/css' />
+    <!-- //for bootstrap working -->
+
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css">
+    <style>
+        .menu--shylock .menu__link::before {
+            background: #7fa33e;
+            -webkit-transition-delay: 0.4s;
+            transition-delay: 0.4s;
+        }
+
+        .menu--shylock .menu__link::after {
+            background: #7fa33e;
+        }
+    </style>
+
+    <!-- js -->
+    <script type="text/javascript" src="~/js/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <script src="~/js/modernizr.custom.js"></script>
+    <!-- Custom-JavaScript-File-Links -->
+   
+    <!-- script for responsive tabs -->
+    <script src="~/js/easy-responsive-tabs.js"></script>
+    @*<script>
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true,   // 100% fit in a container
+                closed: 'accordion', // Start closed if in accordion view
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+            $('#verticalTab').easyResponsiveTabs({
+                type: 'vertical',
+                width: 'auto',
+                fit: true
+            });
+        });
+    </script>
+    <!-- //script for responsive tabs -->
+   
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/js/move-top.js"></script>
+    <script type="text/javascript" src="~/js/jquery.easing.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>*@
+    <!-- here stars scrolling icon -->
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>*@
+    <!-- //here ends scrolling icon -->
+    <!-- for bootstrap working -->
+    <script type="text/javascript" src="~/js/bootstrap.js"></script>
+</head>
+<body>
+    <!-- header -->
+    <div class="header" id="home">
+        <div class="container">
+            <ul>
+                <li style="padding-right:120px; padding-top:7px; padding-bottom:0px;">@Html.Partial("_LoginPartial")</li>
+                @if (Request.IsAuthenticated)
+                {
+                    <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-unlock-alt" aria-hidden="true" style="color:#7fa33e;"></i>Log off</a></li>
+                }
+                else
+                {
+                    <li><a href="#" data-toggle="modal" data-target="#myModal2"><i class="fa fa-pencil-square-o" aria-hidden="true" style="color:#7fa33e"></i> Sign Up </a></li>
+                }
+                <li><i class="fa fa-phone" aria-hidden="true" style="color:#7fa33e"></i> Call : 09-402523271</li>
+                <li><i class="fa fa-envelope-o" aria-hidden="true" style="color:#7fa33e"></i> <a href="mailto:info@example.com">info@zweekwatonlinemarket.com</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- //header -->
+    <!-- header-bot -->
+    <div class="header-bot">
+        <div class="header-bot_inner_wthreeinfo_header_mid">
+
+            <!-- header-bot -->
+            <div class="col-md-4 logo_agile">
+                <a href="/Home"><img src="~/images/Logo1.png" width="70%" height="70%" /></a>
+            </div>
+            <!-- header-bot -->
+            <!--Search-->
+            @*<div class="col-md-4 header-middle" style="margin-top: 4%;">
+                <form action="#" method="post">
+                    <input type="search" name="search" placeholder="Search here..." required="">
+                    <input type="submit" value=" " style="background: url(../images/search.png) no-repeat 9px 0px #7fa33e;">
+                    <div class="clearfix"></div>
+                </form>
+            </div>*@
+
+            <div class="col-md-4 agileits-social top_content" style="margin-top: 3%;">
+                <ul class="social-nav model-3d-0 footer-social w3_agile_social">
+                    <li class="share">Share On : </li>
+                    <li>
+                        <a href="https://m.facebook.com/Zwee-Kwat-2289075038046547/" class="facebook">
+                            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/KwatZwee" class="twitter">
+                            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/zweekwat/" class="instagram">
+                            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/zwee-kwat-33958017b/" class="pinterest">
+                            <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                </ul>
+
+
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //header-bot -->
+    <!-- banner -->
+    <div class="ban-top">
+        <div class="container">
+            <div class="top_nav_left">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav menu__list">
+                                <li class=" menu__item"><a class="menu__link" href="/Home">HOME <span class="sr-only">(current)</span></a></li>
+
+                                @if (ViewContext.HttpContext.User.IsInRole("admin"))
+                                {
+                                    <li class=" menu__item"><a class="menu__link" href="/Home/AdminView">ADMIN Management</a></li>
+                                }
+                                else if (ViewContext.HttpContext.User.IsInRole("seller"))
+                                {
+                                    <li class=" menu__item"><a class="menu__link" href="/Home/SellerView">STORE Management</a></li>
+                                }
+                                else
+                                {
+                                    <li class=" menu__item"><a class="menu__link" href="/Home/About">ABOUT</a></li>
+                                }
+
+
+                                <li class=" menu__item"><a class="menu__link" href="/Home/AllStores">ALL STORES</a></li>
+                                <li class=" menu__item"><a class="menu__link" href="/Home/AllProducts">ALL PRODUCTS</a></li>
+
+
+
+                                @*<li class="dropdown menu__item">
+                                        <a href="#" class="dropdown-toggle menu__link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CATEGORIES<span class="caret"></span></a>
+
+                                        <ul class="dropdown-menu multi-column columns-3">
+                                            <div class="agile_inner_drop_nav_info">
+
+                                                <div class="col-sm-3 multi-gd-img">
+                                                    <ul class="multi-column-dropdown">
+
+                                                    </ul>
+                                                </div>
+
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </ul>
+
+                                    </li>*@
+
+                                <li class=" menu__item"><a class="menu__link" href="/Stores/Create">SELL</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            @*<div class="top_nav_right">
+
+                <div style="float: right; cursor: pointer;">
+                    <span class="glyphicon2 glyphicon-shopping-cart my-cart-icon" style="color:black; padding:40px; text-align:center;"><span class="badge badge-notify my-cart-badge"></span></span>
+                </div>
+
+            </div>*@
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //banner-top -->
+    <!-- Modal1 -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body modal-body-sub_agile">
+                    <div class="col-md-8 modal_body_left modal_body_left1">
+                        <h3 class="agileinfo_sign">Log In <span>Now</span></h3>
+                        <form action="~/Account/Login" method="post">
+                            <div class="styled-input">
+                                <input type="email" name="Email" required="">
+                                <label>Email</label>
+                                <span></span>
+                            </div>
+                            <div class="styled-input">
+                                <input type="password" name="Password" required="">
+                                <label>Password</label>
+                                <span></span>
+                            </div>
+                            <div style="padding-top:40px">
+                                <input type="submit" value="Log in">
+                            </div>
+
+                        </form>
+
+                        <div style="padding-top:30px">
+                            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div style="padding-top:60px">
+                            <p><a href="#" data-toggle="modal" data-target="#myModal2"> Don't have an account?</a></p>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-4 modal_body_right modal_body_right1">
+                        <img src="/images/log_pic.jpg" alt=" " />
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- //Modal content-->
+        </div>
+    </div>
+
+    <!-- //Modal1 -->
+    <!-- Modal2 -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body modal-body-sub_agile">
+                    <div class="col-md-8 modal_body_left modal_body_left1">
+                        <h3 class="agileinfo_sign">Sign Up <span>Now</span></h3>
+                        <form action="~/Account/Register" method="post">
+                            <div class="styled-input">
+                                <input type="email" name="Email" required="">
+                                <label>Email</label>
+                                <span></span>
+                            </div>
+                            <div class="styled-input">
+                                <input type="password" name="Password" required="">
+                                <label>Password</label>
+                                <span></span>
+                            </div>
+                            <div class="styled-input">
+                                <input type="password" name="ConfirmPassword" required="">
+                                <label>Confirm Password</label>
+                                <span></span>
+                            </div>
+                            <input type="hidden" name="role" value="user" />
+
+                            <div style="padding-top:30px">
+                                <input type="submit" value="Sign Up">
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="col-md-4 modal_body_right modal_body_right1">
+                        <img src="/images/log_pic.jpg" alt=" " />
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <!-- //Modal content-->
+        </div>
+    </div>
+    <!-- //Modal2 -->
+
+    @RenderBody()
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer_agile_inner_info_w3l">
+            <div class="col-md-3 footer-left">
+                <h2><a href="/Home"><img src="~/images/Logo1.png" width="70%" height="70%" /></a></h2>
+                <p>
+                    Zwee Kwat Online Market is a
+                    collection of online shops.
+                    You can find and buy
+                    many different types of
+                    products from many different
+                    types of online shops at one place.
+                </p>
+                <ul class="social-nav model-3d-0 footer-social w3_agile_social two">
+                    <li>
+                        <a href="https://m.facebook.com/Zwee-Kwat-2289075038046547/" class="facebook">
+                            <div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/KwatZwee" class="twitter">
+                            <div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/zweekwat/" class="instagram">
+                            <div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/zwee-kwat-33958017b/" class="pinterest">
+                            <div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                            <div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9 footer-right">
+                <div class="sign-grds">
+                    <div class="col-md-4 sign-gd">
+                        <h4>Market <span>Information</span> </h4>
+                        <ul>
+                            <li><a href="/Home/About">About Us</a></li>
+                            <li><a href="#">How To Sell</a></li>
+                            <li><a href="#">Why Zwee Kwat</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Returns Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-5 sign-gd-two">
+                        <h4>Contact <span>Information</span></h4>
+                        <div class="w3-address">
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-phone" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Phone Number</h6>
+                                    <p>+95 9402523271</p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Email Address</h6>
+                                    <p>Email :<a href="mailto:example@email.com"> info@zweekwatonlinemarket.com</a></p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                            <div class="w3-address-grid">
+                                <div class="w3-address-left">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                </div>
+                                <div class="w3-address-right">
+                                    <h6>Location</h6>
+                                    <p>
+                                        No(67), Insein St, Kamayut, Yangon, Myanmar.
+
+                                    </p>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 sign-gd flickr-post">
+                        <h4>Team <span>Members</span></h4>
+                        <ul>
+                            <li><a href="https://www.facebook.com/htetaunghein.98"><img src="~/images/t1.jpg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.facebook.com/nyyair.aung"><img src="~/images/t2.jpg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.facebook.com/aung.kaungmyat.792"><img src="~/images/t3.jpg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.facebook.com/kyar.lay.121"><img src="~/images/t4.jpg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.facebook.com/minion.htetmyat"><img src="~/images/t5.jpg" alt=" " class="img-responsive" /></a></li>
+                            <li><a href="https://www.facebook.com/phoe.nyan.90"><img src="~/images/t6.jpg" alt=" " class="img-responsive" /></a></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <p class="copy-right">&copy Zwee Kwat Online Market | Design by <a href="#">Robert</a></p>
+        </div>
+    </div>
+    <!-- //footer -->
+
+    <a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+    <script src="~/js/jquery-2.2.3.min.js"></script>
+    <script type='text/javascript' src="~/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="~/js/jquery.mycart.js"></script>
+    @*<script type="text/javascript">
+        $(function () {
+
+            var goToCartIcon = function ($addTocartBtn) {
+                var $cartIcon = $(".my-cart-icon");
+                var $image = $('<img width="30px" height="30px" src="' + $addTocartBtn.data("image") + '"/>').css({ "position": "fixed", "z-index": "999" });
+                $addTocartBtn.prepend($image);
+                var position = $cartIcon.position();
+                $image.animate({
+                    top: position.top,
+                    left: position.left
+                }, 500, "linear", function () {
+                    $image.remove();
+                });
+            }
+
+            $('.my-cart-btn').myCart({
+                currencySymbol: '$',
+                classCartIcon: 'my-cart-icon',
+                classCartBadge: 'my-cart-badge',
+                classProductQuantity: 'my-product-quantity',
+                classProductRemove: 'my-product-remove',
+                classCheckoutCart: 'my-cart-checkout',
+                affixCartIcon: true,
+                showCheckoutModal: true,
+                numberOfDecimals: 2,
+                cartItems: [
+                    //{ id: 1, name: 'product 1', summary: 'summary 1', price: 10, quantity: 1, image: 'images/img_1.png' },
+                    //{ id: 2, name: 'product 2', summary: 'summary 2', price: 20, quantity: 2, image: 'images/img_2.png' },
+                    //{ id: 3, name: 'product 3', summary: 'summary 3', price: 30, quantity: 1, image: 'images/img_3.png' }
+                ],
+                clickOnAddToCart: function ($addTocart) {
+                    goToCartIcon($addTocart);
+                },
+                afterAddOnCart: function (products, totalPrice, totalQuantity) {
+                    console.log("afterAddOnCart", products, totalPrice, totalQuantity);
+                },
+                clickOnCartIcon: function ($cartIcon, products, totalPrice, totalQuantity) {
+                    console.log("cart icon clicked", $cartIcon, products, totalPrice, totalQuantity);
+                },
+                checkoutCart: function (products, totalPrice, totalQuantity) {
+                    var checkoutString = "Total Price: " + totalPrice + "\nTotal Quantity: " + totalQuantity;
+                    checkoutString += "\n\n id \t name \t summary \t price \t quantity \t image path";
+                    $.each(products, function () {
+                        checkoutString += ("\n " + this.id + " \t " + this.name + " \t " + this.summary + " \t " + this.price + " \t " + this.quantity + " \t " + this.image);
+                    });
+                    alert(checkoutString)
+                    console.log("checking out", products, totalPrice, totalQuantity);
+                },
+                getDiscountPrice: function (products, totalPrice, totalQuantity) {
+                    console.log("calculating discount", products, totalPrice, totalQuantity);
+                    return totalPrice * 0.5;
+                }
+            });
+
+        });
+    </script>*@
+
+
+</body>
+</html>

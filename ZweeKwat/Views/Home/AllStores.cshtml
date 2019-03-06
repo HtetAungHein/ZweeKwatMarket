@@ -1,0 +1,51 @@
+﻿
+@model IEnumerable<ZweeKwatMarket.Models.Store>
+
+
+
+<div style="text-align:center; padding-top:50px;">
+    <h3 class="wthree_text_info">All Stores <span style="color:#7fa33e">@@Zwee Kwat Market</span></h3>
+</div>
+
+<div class="new_arrivals_agile_w3ls_info">
+    <div class="container">
+
+        @foreach (var item in Model)
+        {
+
+            <div class="col-md-3 product-men">
+                <div class="men-pro-item simpleCart_shelfItem">
+                   <div class="men-thumb-item">
+                       <div><img src="~/images/StoreProfile/@item.ImagePath" width="200px" height="200px"></div>
+                   </div>
+                    <div class="item-info-product ">
+                        <h3 style="color:red">@item.StoreName</h3>
+                        <div class="info-product-price" style="padding-top:20px; padding-bottom:20px">
+                            <h5>Owner - @item.OwnerName</h5>
+                            <h5>Phone - @item.Phone</h5>
+                        </div>
+                        <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out button2">
+                            <form action="/Home/AllProducts" method="post">
+                                
+                                    <input type="submit" name="submit" value="Visit Store" class="button" />
+                                
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        }
+
+        </div>
+        </div>
+   
+           
+
+
+
+
+
+
+

@@ -1,0 +1,171 @@
+﻿@model ZweeKwatMarket.Models.Product
+    @{ 
+    ViewBag.Title = "CheckOut";
+}
+<!--stylesheets-->
+<link href="~/css/style2.css" rel='stylesheet' type='text/css' media="all">
+<!--//stylesheets-->
+<!--checkout-->
+<link rel="stylesheet" type="text/css" href="~/css/checkout.css">
+<!--//checkout-->
+<!--Checkout-->
+<!-- //banner -->
+<!-- top Products -->
+<section class="checkout py-lg-4 py-md-3 py-sm-3 py-3">
+    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+        <div class="shop_inner_inf">
+            <div class="privacy about">
+                <h3>Chec<span>kout</span></h3>
+                <div class="checkout-right">
+                    <hr />
+                    <table class="timetable_sub">
+                        <thead>
+                            <tr>
+                                <th>SL No.</th>
+                                <th>Product</th>
+                                <th>Quality</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="rem1">
+                                <td class="invert">1</td>
+                                <td class="invert-image"><img src="~/images/ProductProfile/@Model.ImagePath" alt=" " class="img-responsive" style="width:100px; height:100px;"></td>
+                                <td class="invert">
+                                    <div class="quantity">
+                                        <div class="quantity-select">
+
+                                            <div class="entry value"><span>1</span></div>
+
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="invert">@Model.Name</td>
+                                <td class="invert">@Model.Price</td>
+                                <td class="invert">
+                                    <div class="rem">
+                                        <div class="close1"> </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="checkout-left">
+                    <div class="col-md-4 checkout-left-basket">
+                        <h4>Continue to basket</h4>
+                        <ul>
+                            <li>Sub Total <i>-</i> <span>@Model.Price</span></li>
+                            <li>Delivery Fees <i>-</i> <span> 2000 </span></li>
+                            <li>Tax <i>-</i> <span>@(Model.Price*0.05)</span></li>
+                            <li>Total <i>-</i> <span>@{
+                              var total =  (Model.Price + (Model.Price * 0.05) + 2000);
+                            }@total</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-8 address_form">
+                        <h4>Add a new Details</h4>
+                        <form action="/CheckOut/CheckOut" method="post" class="creditly-card-form agileinfo_form">
+                            <section class="creditly-wrapper wrapper">
+                                <div class="information-wrapper">
+                                    <div class="first-row form-group">
+                                        <div class="controls">
+                                            <label class="control-label">Full name: </label>
+                                            <input class="billing-address-name form-control" type="text" name="Name" placeholder="Full name">
+                                        </div>
+                                        <div class="card_number_grids">
+                                            <div class="card_number_grid_left">
+                                                <div class="controls">
+                                                    <label class="control-label">Mobile number:</label>
+                                                    <input class="form-control" name="Phone" type="text" placeholder="Mobile number">
+                                                </div>
+                                            </div>
+                                            <div class="card_number_grid_right">
+                                                <div class="controls">
+                                                    <label class="control-label">Address: </label>
+                                                    <input class="form-control" name="Address" type="text" placeholder="Deliver Address">
+                                                </div>
+                                            </div>
+                                            <div class="clear"> </div>
+                                        </div>
+                            </section>
+                            <div class="checkout-right-basket">
+                                <input type="submit" value="CheckOut" class="btn btn-primary"/>
+                            </div>
+                        </form>
+                        
+                    </div>
+                    <div class="clearfix"> </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <!-- //top products -->
+    </div>
+
+    <!--subscribe-address-->
+    <section class="subscribe">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 map-info-right px-0">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+    <!--//subscribe-address-->
+    <!--js working-->
+    <script src='~/js/jquery-2.2.3.min.js'></script>
+    <!--//js working-->
+</section>
+<!--quantity-->
+<script>
+    $('.value-plus').on('click', function () {
+        var divUpd = $(this).parent().find('.value'),
+            newVal = parseInt(divUpd.text(), 10) + 1;
+        divUpd.text(newVal);
+    });
+
+    $('.value-minus').on('click', function () {
+        var divUpd = $(this).parent().find('.value'),
+            newVal = parseInt(divUpd.text(), 10) - 1;
+        if (newVal >= 1) divUpd.text(newVal);
+    });
+</script>
+<!--quantity-->
+<!--closed-->
+<script>
+    $(document).ready(function (c) {
+        $('.close1').on('click', function (c) {
+            $('.rem1').fadeOut('slow', function (c) {
+                $('.rem1').remove();
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function (c) {
+        $('.close2').on('click', function (c) {
+            $('.rem2').fadeOut('slow', function (c) {
+                $('.rem2').remove();
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function (c) {
+        $('.close3').on('click', function (c) {
+            $('.rem3').fadeOut('slow', function (c) {
+                $('.rem3').remove();
+            });
+        });
+    });
+</script>
+<!--//closed-->
+<!--bootstrap working-->
+<script src="~/js/bootstrap.min.js"></script>
+<!-- //bootstrap working-->

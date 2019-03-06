@@ -1,0 +1,49 @@
+﻿@model IEnumerable<ZweeKwatMarket.Models.Store>
+
+@*@{
+    ViewBag.Title = "Index";
+}*@
+
+
+<h2 class="typoh2" style="padding-left:20px; padding-top:20px;">Information of All Stores</h2>
+
+<div class="bs-docs-example" style="padding:30px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Logo</th>
+                <th>Store Name</th>
+                <th>Owner Name</th>
+                <th>NRC</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td style="vertical-align: middle;"><img src="~/images/StoreProfile/@item.ImagePath" width="70px" height="70px"/></td>
+                    <td style="vertical-align: middle;">@item.StoreName</td>
+                    <td style="vertical-align: middle;">@item.OwnerName</td>
+                    <td style="vertical-align: middle;">@item.NRC</td>
+                    <td style="vertical-align: middle;">@item.Phone</td>
+                    <td style="vertical-align: middle;">@item.Email</td>
+                    <td style="vertical-align: middle;">@item.Address</td>
+                    <td style="vertical-align: middle;">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    </td>
+                    <td style="vertical-align: middle;">
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+
+            </tbody>
+        }
+
+    </table>
+
+</div>

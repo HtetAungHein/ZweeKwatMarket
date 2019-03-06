@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ZweeKwatMarket.Models.Product>
+
+
+<h2 class="typoh2" style="padding-left:20px; padding-top:20px;">Information of All Stores</h2>
+
+<div class="bs-docs-example" style="padding:30px;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Photo</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Store Name</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td style="vertical-align: middle;"><img src="~/images/ProductProfile/@item.ImagePath" width="70px" height="70px" /></td>
+                    <td style="vertical-align: middle;">@item.Name</td>
+                    <td style="vertical-align: middle;">@item.Price</td>
+                    <td style="vertical-align: middle;">@item.CategoryID</td>
+                    <td style="vertical-align: middle;">@item.Quantity</td>
+                    <td style="vertical-align: middle;">@item.StoreID</td>
+                    <td style="vertical-align: middle;">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                    </td>
+                    <td style="vertical-align: middle;">
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+
+            </tbody>
+        }
+
+    </table>
+
+</div>
